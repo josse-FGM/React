@@ -58,10 +58,10 @@ export const Tarea=()=>{
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if(id==''||name==''||career==''||imageUrl==''){
+        if(id===''||name===''||career===''||imageUrl===''){
             alert('LLENA LOS CAMPOS FALTANTES')
         }else{
-            if(edit==false){
+            if(edit===false){
                 setAlumn([...alumn,{id:id,name:name,career:career,image:imageUrl}])
             }else{
                 alumn[indexToEdit]={...alumn[indexToEdit],id:id,name:name,career:career,image:imageUrl}
@@ -156,7 +156,7 @@ export const Tarea=()=>{
                                 <td>{item.id}</td>
                                 <td>{item.name}</td>
                                 <td>{item.career}</td>
-                                <td><img src={item.image} width={"200px"} height={"100px"}/></td>
+                                <td><img src={item.image}  className="foto" alt="foto"/></td>
                                 <td><Button id={"buttonAdd"} onClick={()=>editElement(index)}>Editar</Button></td>
                                 <td><Button id={"buttonCancel"} onClick={()=>deleteElement(item.id)}>Eliminar</Button></td>
                             </tr>
